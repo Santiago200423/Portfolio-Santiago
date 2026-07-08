@@ -253,46 +253,68 @@ section {
 .about-content {
     color: var(--white);
     font-size: clamp(1rem, 1.1vw, 1.25rem);
-    line-height: 1.9;
-    text-align: right;
-    max-width: 1050px;
-    gap: 1.5rem;
-    margin: 0 auto 3rem;
-    padding: 2rem;
+    line-height: 1.8;
+    text-align: left;
+    max-width: 720px;
+    width: min(100%, 720px);
+    margin: 0;
+    padding: 0;
     font-family: 'Inter', sans-serif;
     border-radius: 20px;
-    flex: 1;
-    min-width: 1000px;
+    flex: 1 1 320px;
+    min-width: 0;
 }
 
 .wrapper1 {
-    width: 100%;
-    min-height: 100vh;
+    width: min(100%, 1200px);
+    min-height: auto;
     overflow: hidden;
     margin: 0 auto;
-    padding: 2rem 0 1rem;
+    padding: 2rem 1rem 1rem;
 }
 
 .row {
     display: flex;
     flex-wrap: wrap;
-    gap: 4rem;
+    gap: 2rem;
     justify-content: center;
-    align-items: flex-start;
-    padding: 0 1rem;
+    align-items: center;
+    padding: 0;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .image-section {
-    flex: 0 0 35%;
-    min-width: 260px;
+    flex: 0 1 320px;
+    width: 100%;
+    max-width: 320px;
+    min-width: 0;
 }
 
 .image-section img {
     width: 100%;
     height: auto;
     border-radius: 16px;
+    display: block;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.25rem;
+    }
+
+    .image-section {
+        max-width: min(280px, 100%);
+    }
+
+    .about-content {
+        width: 100%;
+        padding: 0;
+        text-align: left;
+    }
 }
 
 .videos-container iframe {
@@ -678,57 +700,6 @@ section > h1 {
     margin: 0.25rem 0 0;
     font-family: 'Inter', sans-serif;
 }
-/* About Section */
-.section-title {
-    
-    font-size: 2.9rem;
-    text-align: center;
-    margin-top: 0rem;
-    text-decoration: underline;
-    color: var(--gold);
-    font-family: 'Libre Baskerville', serif;
-}
-
-.about-content {
-    color: var(--white);
-    font-size: 1.4rem;
-    line-height: 1.9;
-    text-align: left;
-    max-width: 1200px;
-    margin: 0px;
-    padding: 50px;
-    font-family: 'Inter', sans-serif;
-    float:left;
-    
-}
-
-.wrapper1{
-    width: 100%;
-    min-height: 100vh;
-    overflow: hidden;
-    margin: 1px;
-   
-
-}
-.row{
-    width:100%;
-    padding:10px 50px;
-}
-
-.image-section{
-    width: 30%;
-    float:left;
-    
-   
-
-}
-.image-section img{
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    
-    
-}
 /* Skills Section */
 .carousel{
     margin: 100px auto;
@@ -736,6 +707,7 @@ section > h1 {
     display: flex;
     overflow-x: auto;
     gap: 3em;
+    margin-top: 3em;
 }
 .carousel::-webkit-scrollbar{
     display: none;
