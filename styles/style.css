@@ -746,6 +746,102 @@ h6{
     margin-top: 1.5rem;
 }
 
+/*Websites*/
+.sliders {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 2rem;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.sliders .prices {
+    flex: 1 1 320px;
+    max-width: 480px;
+    margin: 1rem 0;
+}
+.section-title-1{
+    color: silver;
+     font-size: clamp(2rem, 4vw, 2.9rem);
+    text-align: center;
+    margin: 0 auto 1.5rem;
+    text-decoration: underline;
+   
+    font-family: 'Libre Baskerville', serif;
+    max-width: 1000px;
+}
+.price{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 3rem;
+    text-align: center;
+    text-decoration: underline ;
+    color:#c9a24b;
+    margin: 0.2rem;
+}
+.price-350{
+font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 3rem;
+    text-align: center;
+    text-decoration: underline ;
+    color:silver;
+    margin: 0.2rem;
+}
+
+h4{
+    color: var(--gold-bright)
+}
+/*slider*/
+.avila-review-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.avila-review-text {
+  flex: 1 1 320px;
+  max-width: 600px;
+  margin: 0;
+}
+
+.avila-slider-wrapper {
+  position: relative;
+  width: min(60rem, 120vw);
+  margin: 5;
+  flex-shrink: 0;
+}
+
+.avila-slider {
+  display: flex;
+  aspect-ratio: 16 / 6;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  box-shadow: 0 1.5rem 3rem hsla(0, 0%, 0%, 0.25);
+  border-radius: 0.5rem;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.avila-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.avila-slider img {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avila-slider-nav
+
 /* Portfolio Section */
 .videos-container {
     display: grid;
