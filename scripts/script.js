@@ -72,3 +72,40 @@ document.addEventListener("DOMContentLoaded", function () {
 		});
 	}
 });
+
+
+// ── About slider ──────────────────────────────────────────
+// ── About slider ──────────────────────────────────────────
+const aboutSlider = document.querySelector('.avila-slider');
+
+if (aboutSlider) {
+  const slides = document.querySelectorAll('.avila-slider img');
+  let currentSlide = 0;
+
+  function goToSlide(index) {
+    currentSlide = index;
+    aboutSlider.scrollTo({
+      left: aboutSlider.clientWidth * currentSlide,
+      behavior: 'smooth'
+    });
+  }
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    goToSlide(currentSlide);
+  }
+
+  let autoSlide = setInterval(nextSlide, 3500);
+
+  aboutSlider.addEventListener('mouseenter', () => clearInterval(autoSlide));
+  aboutSlider.addEventListener('mouseleave', () => {
+    autoSlide = setInterval(nextSlide, 3500);
+  });
+
+  document.querySelectorAll('.avila-slider-nav a').forEach((dot, index) => {
+    dot.addEventListener('click', (e) => {
+      e.preventDefault();
+      goToSlide(index);
+    });
+  });
+}
