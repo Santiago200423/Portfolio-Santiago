@@ -20,6 +20,45 @@ document.addEventListener("DOMContentLoaded", function () {
 		reveals.forEach(section => revealObserver.observe(section));
 	}
 
+  const contactForm = document.querySelector("#contactForm");
+
+  if (contactForm) {
+    const formMessage = contactForm.querySelector("#formMessage");
+    const submitButton = contactForm.querySelector('button[type="submit"]');
+
+    contactForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      submitButton.disabled = true;
+      const originalButtonText = submitButton.textContent;
+      submitButton.textContent = "Sending...";
+      formMessage.className = "form-message";
+      formMessage.textContent = "";
+
+      try {
+        const response = await fetch(contactForm.action, {
+          method: "POST",
+          body: new FormData(contactForm),
+          headers: { Accept: "application/json" }
+        });
+        const result = await response.json();
+
+        if (!response.ok || (result.success !== true && result.success !== "true")) {
+          throw new Error("Form submission failed");
+        }
+
+        contactForm.reset();
+        formMessage.textContent = "Your message was sent successfully.";
+        formMessage.classList.add("success");
+      } catch (error) {
+        formMessage.textContent = "Your message could not be sent. Please try again.";
+        formMessage.classList.add("error");
+      } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = originalButtonText;
+      }
+    });
+  }
+
   const autoplayVideo = document.querySelector(".avila-video");
 
   if (autoplayVideo) {

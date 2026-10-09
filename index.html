@@ -280,9 +280,8 @@
         <h1 class="section-title">Contact</h1>
         <p class="contact-intro">Feel free to reach out to me for any inquiries, collaborations, or opportunities. I'm always open to discussing new projects and ideas.</p>
         <div class="contact-info">
-            <form id="contactForm" class="contact-form" action="https://formsubmit.co/santiago.velasco.pereira@gmail.com" method="POST">
+            <form id="contactForm" class="contact-form" action="https://formsubmit.co/ajax/santiago.velasco.pereira@gmail.com" method="POST">
                 <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_next" value="https://velasco-media.com/#contact">
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input type="text" id="name" name="name" required>
@@ -300,7 +299,7 @@
                     <textarea id="message" name="message" rows="6" required></textarea>
                 </div>
                 <button type="submit" class="btn-primary btn-submit">Send Message</button>
-                <p id="formMessage" class="form-message"></p>
+                <p id="formMessage" class="form-message" aria-live="polite" role="status"></p>
             </form>
         </div>
     </div>
