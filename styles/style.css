@@ -1255,6 +1255,10 @@ body {
     gap: 2.5rem;
 }
 
+.avila-review-row + .avila-review-row {
+    margin-top: 3rem;
+}
+
 .avila-slider-wrapper {
     width: min(100%, 560px);
 }
@@ -1412,6 +1416,10 @@ body {
 
     .avila-review-row {
         gap: 1rem;
+    }
+
+    .avila-review-row + .avila-review-row {
+        margin-top: 2rem;
     }
 }
 
