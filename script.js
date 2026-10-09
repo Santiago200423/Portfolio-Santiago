@@ -20,6 +20,22 @@ document.addEventListener("DOMContentLoaded", function () {
 		reveals.forEach(section => revealObserver.observe(section));
 	}
 
+  const autoplayVideo = document.querySelector(".avila-video");
+
+  if (autoplayVideo) {
+    const videoObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          autoplayVideo.play().catch(() => {});
+        } else {
+          autoplayVideo.pause();
+        }
+      });
+    }, { threshold: 0.35 });
+
+    videoObserver.observe(autoplayVideo);
+  }
+
 });
 
 
